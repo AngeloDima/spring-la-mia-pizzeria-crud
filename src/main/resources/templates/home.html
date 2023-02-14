@@ -6,10 +6,17 @@
 </head>
 <body>
 <h1>Le tue pizze</h1>
-<ul>
-    <li th:each="pizza : ${elencoPizze}">
-        <span th:text="${pizza.nome}"></span> - <span th:text="${pizza.descrizione}"></span> - <span th:text="${pizza.prezzo}"></span> euro
-    </li>
-</ul>
+
+
+	<div>
+	<ul th:if="${elencoPizze}">
+	    <li th:each="pizza : ${elencoPizze}">
+	        <span th:text="${pizza.nome}"></span> - <span th:text="${pizza.descrizione}"></span> - <span th:text="${pizza.prezzo}"></span> euro
+	    </li>
+	</ul>
+	<h3 th:unless="${not #lists.isEmpty(elencoPizze)}">Non ci sono pizze</h3>
+</div>
+	
+	
 </body>
 </html>
