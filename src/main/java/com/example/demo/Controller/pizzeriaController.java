@@ -16,15 +16,17 @@ import com.example.demo.Repository.pizzeriaRepository;
 @Controller
 @RequestMapping("/")
 public class pizzeriaController {
-pizzeriaModel pizza;
 
-private @Autowired pizzeriaRepository PizzeriaRepository;
+    @Autowired 
+    pizzeriaRepository PizzeriaRepository;
 	
-	@GetMapping
-	public String index(Model model) {
-		List<pizzeriaModel> pizze = PizzeriaRepository.findAll();
+    @GetMapping
+    public String index(Model model) {
+        List<pizzeriaModel> elencoPizze = PizzeriaRepository.findAll();
 		
-		model.addAttribute("pizze", pizze);
-		return "books/index";
-	}
+        model.addAttribute("elencoPizze", elencoPizze);
+        return "home";
+    }
 }
+
+

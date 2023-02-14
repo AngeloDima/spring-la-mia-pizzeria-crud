@@ -2,9 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Le tue pizze</title>
 </head>
 <body>
-
+<h1>Le tue pizze</h1>
+<ul>
+    <li th:each="pizza : ${elencoPizze}">
+        <span th:text="${pizza.nome}"></span> - <span th:text="${pizza.descrizione}"></span> - <span th:text="${pizza.prezzo}"></span> euro
+    </li>
+</ul>
 </body>
 </html>
