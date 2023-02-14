@@ -2,18 +2,25 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="css/home.css">
 <title>Le tue pizze</title>
 </head>
 <body>
-<h1>Le tue pizze</h1>
 
 
-	<div>
-	<ul th:if="${elencoPizze}">
-	    <li th:each="pizza : ${elencoPizze}">
-	        <span th:text="${pizza.nome}"></span> - <span th:text="${pizza.descrizione}"></span> - <span th:text="${pizza.prezzo}"></span> euro
+
+
+
+
+
+<div id="content">
+	<h1 id="pizze">Le tue pizze</h1>
+	<ul id="contentList" th:if="${elencoPizze}">
+	    <li id="spaz" th:each="pizza : ${elencoPizze}">
+	        <span  th:text="${pizza.nome}"></span> - <span th:text="${pizza.descrizione}"></span> - <span th:text="${pizza.prezzo}"></span> $
 	    </li>
 	</ul>
+	
 	<h3 th:unless="${not #lists.isEmpty(elencoPizze)}">Non ci sono pizze</h3>
 </div>
 	
