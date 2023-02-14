@@ -43,3 +43,18 @@
     border-top: 1px solid #00000029;
     border-bottom: 1px solid #00000029;
 }
+
+#Err{
+	height: 300px;
+    width: 50%;
+    text-align: center;
+    line-height: 300px;
+    background: #f3f3f3;
+    margin-top: 5%;
+    font-size: 3.5rem;
+    font-family: cursive;
+    border: 1px solid #ff000052;
+    border-radius: 14px;
+    color: #282828;
+    box-shadow: 7px 6px 11px 0px #6c6c6c47;
+}
