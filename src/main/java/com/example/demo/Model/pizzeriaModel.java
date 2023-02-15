@@ -26,6 +26,8 @@ public class pizzeriaModel {
     @Column(nullable = false)
     private Double prezzo;
 	
+    
+    
     public String getNome() {
         return nome;
     }
@@ -54,5 +56,7 @@ public class pizzeriaModel {
         return id;
     }
 }
+
+
 
 

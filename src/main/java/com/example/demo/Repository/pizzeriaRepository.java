@@ -7,6 +7,6 @@ import com.example.demo.Model.pizzeriaModel;
 
 public interface pizzeriaRepository extends JpaRepository<pizzeriaModel, Integer>{
 
-
+	
 	
 }

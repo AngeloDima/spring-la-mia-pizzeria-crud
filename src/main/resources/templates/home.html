@@ -17,7 +17,7 @@
 	<h1 id="pizze">Le tue pizze</h1>
 	<ul id="contentList" th:if="${elencoPizze}">
 	    <li id="spaz" th:each="pizza : ${elencoPizze}">
-	        <span  th:text="${pizza.nome}"></span> - <span th:text="${pizza.descrizione}"></span> - <span th:text="${pizza.prezzo}"></span> $
+	         <a th:href="@{/pizza/{id}(id=${pizza.id})}" th:text="${pizza.nome}"></a> - <span th:text="${pizza.descrizione}"></span> - <span th:text="${pizza.prezzo}"></span> $
 	    </li>
 	</ul>
 	
