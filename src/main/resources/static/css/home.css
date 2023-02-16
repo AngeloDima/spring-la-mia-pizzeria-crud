@@ -4,46 +4,61 @@
 	padding:0;
 }
 
+a{
+	text-decoration: none;
+}
+
+body{
+	background-color: #fafafa;
+}
 
 
 #content{
-	display: flex;
-	flex-direction:column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
     height: 100vh;
-    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.up{
+	width: 100%;
+    height: 15%;
+    background: green;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.down{
+	height: 85%;
+    width: 95%;
+}
+#elen{
+	padding: 80px 0px 30px 0px;
 }
 
 #contentList{
-	
+	width: 100%;
+	height: 70%;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
-    justify-content: space-around;
+    font-size: 1.5rem;
 }
+
 
 #spaz{
-	padding-top: 5%;
-    font-family: cursive;
-    font-size: 1.3rem;
-    color: #1a1a1a;
-    border-bottom: 1px solid black;
+    width: 33%;
+    height: 10%;
+    background: #ffffff8f;
     list-style: none;
+    border-radius: 7px;
+    box-shadow: 3px 2px 3px 0px #0000003b;
+    line-height: 45px;
 }
 
-#pizze{
-	font-family: math;
-    font-size: 3rem;
-    background: #e5e5e54a;
-    width: 100%;
-    height: 80px;
-    text-align: center;
-    line-height: 80px;
-    border-top: 1px solid #00000029;
-    border-bottom: 1px solid #00000029;
-    box-shadow: 0px 14px 19px 10px #e5e5e5;
-}
+
 
 #Err{
 	height: 300px;

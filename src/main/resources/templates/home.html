@@ -14,12 +14,27 @@
 
 
 <div id="content">
-	<h1 id="pizze">Le tue pizze</h1>
-	<ul id="contentList" th:if="${elencoPizze}">
-	    <li id="spaz" th:each="pizza : ${elencoPizze}">
-	         <a th:href="@{/pizza/{id}(id=${pizza.id})}" th:text="${pizza.nome}"></a> - <span th:text="${pizza.descrizione}"></span> - <span th:text="${pizza.prezzo}"></span> $
-	    </li>
-	</ul>
+
+
+	<div class="up">
+		<h1 id="pizze">PizzeriaCrud</h1>
+	</div>
+	
+	<a th:href="@{/create}">Crea la tua pizza</a>
+	
+	
+	
+		
+	
+	<div class="down">
+		<h2 id="elen">Elenco pizze</h2>
+		<ul id="contentList" th:if="${elencoPizze}">
+		    <li id="spaz" th:each="pizza : ${elencoPizze}">
+		         <a th:href="@{/pizza/{id}(id=${pizza.id})}" th:text="${pizza.nome}"></a> - <span th:text="${pizza.descrizione}"></span> - <span th:text="${pizza.prezzo}"></span> $
+		    </li>
+		</ul>
+	</div>
+	
 	
 	<h3 id="Err" th:unless="${not #lists.isEmpty(elencoPizze)}">Non ci sono pizze</h3>
 </div>
