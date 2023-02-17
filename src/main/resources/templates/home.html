@@ -32,7 +32,10 @@
 		        <li id="spaz" th:each="pizza : ${elencoPizze}">
 		            <a th:href="@{/pizza/{id}(id=${pizza.id})}" th:text="${pizza.nome}"></a> - <span th:text="${pizza.descrizione}"></span> - <span th:text="${pizza.prezzo}"></span> $
 		            <form th:action="@{/delete/{id}(id=${pizza.id})}" method="post">
-		                <button type="submit">Click Delete</button>
+		                <button type="submit">Click to Delete</button>
+		            </form>
+		            <form th:action="@{/edit/{id}(id=${pizza.id})}" method="post">
+		                <button type="submit">Click to Edit</button>
 		            </form>
 		        </li>
 		    </ul>
