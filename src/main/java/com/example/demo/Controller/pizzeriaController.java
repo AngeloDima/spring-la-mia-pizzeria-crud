@@ -54,7 +54,7 @@ public class pizzeriaController {
     }
 
     @PostMapping("/create")
-    public String store(@Valid @ModelAttribute("pizzeria") pizzeriaModel formPizzeria,BindingResult bindingResult, Model model) {
+    public String storeCreate(@Valid @ModelAttribute("pizzeria") pizzeriaModel formPizzeria,BindingResult bindingResult, Model model) {
         
         	if (bindingResult.hasErrors()) {
         		return "create";
@@ -73,6 +73,47 @@ public class pizzeriaController {
     	return "pizza";
     	
     }
+    
+    
+    //edit
+    
+    
+    @GetMapping("/edit/{id}") 
+    	public String storeEdit(@PathVariable("id") Integer id, Model model) {
+    		
+    		pizzeriaModel pizzeria;
+    		pizzeria=repository.getReferenceById(id);
+    		model.addAttribute("pizzeria", pizzeria);
+    	
+    		return "edit";
+    	}
+    
+    
+    @PostMapping("/edit/{id}")
+    public String update(
+    		@Valid @ModelAttribute ("pizzeria") pizzeriaModel formPizzeria,BindingResult bindingResult, Model model) {
+    	
+    	if(bindingResult.hasErrors()) {
+    		return "edit";
+    	}
+    		repository.save(formPizzeria);
+    		return "redirect:/";
+    }
+    
+    
+    //delete
+    
+
+    @PostMapping("/delete/{id}")
+    public String delete(@PathVariable("id") Integer id) {
+        repository.deleteById(id);
+        return "redirect:/";
+    }
 }
+    
+    
+
+
+
 
 

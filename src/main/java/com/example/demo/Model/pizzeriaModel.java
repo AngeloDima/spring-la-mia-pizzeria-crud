@@ -36,7 +36,9 @@ public class pizzeriaModel {
     
     
     
-    @NonNull
+
+
+	@NonNull
     @NotEmpty(message="Devi inserire un nome")
     @Column(nullable = false)
     @Size(min = 4, max = 20, message = "il nome deve contenere minimo 4 caratteri")
@@ -90,6 +92,11 @@ public class pizzeriaModel {
     public Integer getId() {
         return id;
     }
+    
+    public void setId(Integer id) {
+		this.id = id;
+	}
+
 }
 
 

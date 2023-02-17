@@ -26,14 +26,17 @@
 	
 		
 	
-	<div class="down">
-		<h2 id="elen">Elenco pizze</h2>
-		<ul id="contentList" th:if="${elencoPizze}">
-		    <li id="spaz" th:each="pizza : ${elencoPizze}">
-		         <a th:href="@{/pizza/{id}(id=${pizza.id})}" th:text="${pizza.nome}"></a> - <span th:text="${pizza.descrizione}"></span> - <span th:text="${pizza.prezzo}"></span> $
-		    </li>
-		</ul>
-	</div>
+		<div class="down">
+		    <h2 id="elen">Elenco pizze</h2>
+		    <ul id="contentList" th:if="${elencoPizze}">
+		        <li id="spaz" th:each="pizza : ${elencoPizze}">
+		            <a th:href="@{/pizza/{id}(id=${pizza.id})}" th:text="${pizza.nome}"></a> - <span th:text="${pizza.descrizione}"></span> - <span th:text="${pizza.prezzo}"></span> $
+		            <form th:action="@{/delete/{id}(id=${pizza.id})}" method="post">
+		                <button type="submit">Click Delete</button>
+		            </form>
+		        </li>
+		    </ul>
+		</div>
 	
 	
 	<h3 id="Err" th:unless="${not #lists.isEmpty(elencoPizze)}">Non ci sono pizze</h3>
